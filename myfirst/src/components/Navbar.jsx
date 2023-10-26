@@ -81,7 +81,8 @@ export default function Navbar() {
     const { colorMode, toggleColorMode } = useColorMode()
     const { isOpen, onOpen, onClose } = useDisclosure()
 
-    const userProfile = user?.firstname || "Login"
+    const userProfile1 = user?.firstname.charAt(0) || "Login"
+    const userProfile2 = user?.firstname || "Login"
     const [cartDrawerIsOpen, setCartDrawerIsOpen] = useState(false);
 
     const openCartDrawer = () => {
@@ -290,14 +291,14 @@ export default function Navbar() {
                                     variant={'link'}
                                     cursor={'pointer'}
                                     minW={0}>
-                                    <Box bg={"gray.500"} w={"50px"} h={"50px"} display={"flex"} alignItems={"center"} justifyContent={"center"} borderRadius={"50%"} color={"whatsapp.100"}>{userProfile}</Box>
+                                    <Box bg={"gray.500"} w={"50px"} h={"50px"} display={"flex"} alignItems={"center"} justifyContent={"center"} borderRadius={"50%"} color={"whatsapp.100"}>{userProfile1}</Box>
                                 
                                 </MenuButton>
                                 <MenuList alignItems={'center'}>
                                     <br />
                                     <Center>
 
-                                        <Box bg={"gray.500"} w={"50px"} h={"50px"} display={"flex"} alignItems={"center"} justifyContent={"center"} borderRadius={"50%"} color={"whatsapp.100"}>{userProfile}</Box>
+                                        <Box bg={"gray.500"} w={"auto"} h={"50px"} display={"flex"} alignItems={"center"} justifyContent={"center"} borderRadius={"50%"} color={"whatsapp.100"} p={"3%"}>{userProfile2}</Box>
                                     </Center>
                                     <br />
                                     <Center>
