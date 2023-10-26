@@ -44,7 +44,7 @@ import {
     DrawerContent,
     DrawerCloseButton,
 } from "@chakra-ui/react";
-import { decreaseCartQuantity, deleteCartItem, increaseCartQuantity } from '../Redux/CartData/actions';
+import { decreaseCartQuantity, deleteCartItem, emptyCart, increaseCartQuantity } from '../Redux/CartData/actions';
 import { logout } from '../Redux/AuthData/action';
 
 interface Props {
@@ -159,6 +159,7 @@ export default function Navbar() {
 
         const userLogout = () => {
             dispatch(logout())
+            dispatch(emptyCart())
             toast({
                 title: "Logout",
                 description: `User Logout Successfully.`,

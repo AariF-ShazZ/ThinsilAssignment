@@ -68,13 +68,18 @@ export const reducer = (state = initialState, { type, payload }) => {
         }
         case types.DELETE_CART: {
             console.log("payload =>", payload);
-    
             // if product is present then delete it.
             const updatedCart = state.cart.filter((prod) => {
                 return !(prod.id === payload.id && prod.size === payload.size)
             })
             return {
                 ...state, cart: updatedCart
+            }
+        }
+        case types.EMPTY_CART: {
+            // if Logout the delete all items from cart.
+            return {
+                ...state, cart: []
             }
         }
         default: return state

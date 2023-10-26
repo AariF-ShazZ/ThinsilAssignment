@@ -6,6 +6,11 @@ export const addToCart = (payload) => {
         payload
     }
 }
+export const emptyCart = () => {
+    return {
+        type:types.EMPTY_CART,
+    }
+}
 
 export const increaseCartQuantity = (payload) => {
     return {
